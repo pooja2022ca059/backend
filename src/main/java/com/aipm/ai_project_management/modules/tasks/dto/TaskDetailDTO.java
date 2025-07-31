@@ -173,9 +173,7 @@ public class TaskDetailDTO {
 		this.updatedAt = updatedAt;
 	}
 	
-	private List<CommentDTO> comments;
-	private List<SubtaskDTO> subtasks;
-	private List<AttachmentDTO> attachments;
+	private List<CommentDTO> comments = new ArrayList<>();
 
 	// Getter-Setters
 	public List<CommentDTO> getComments() {
@@ -185,8 +183,6 @@ public class TaskDetailDTO {
 	public void setComments(List<CommentDTO> comments) {
 	    this.comments = comments;
 	}
-
-	// Similarly for subtasks and attachments...
 
 	private String title;
     private String description;
