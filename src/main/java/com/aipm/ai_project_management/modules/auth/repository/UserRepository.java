@@ -32,6 +32,14 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query("SELECT COUNT(u) FROM User u WHERE u.active = true")
     long countActiveUsers();
     
+    // Alternative method name for consistency
+    default long countByIsActiveTrue() {
+        return countActiveUsers();
+    }
+    
+    // Count by role methods
+    long countByRole(UserRole role);
+    
     @Modifying
     @Query("UPDATE User u SET u.lastLogin = :lastLogin WHERE u.id = :userId")
     void updateLastLogin(@Param("userId") Long userId, @Param("lastLogin") LocalDateTime lastLogin);

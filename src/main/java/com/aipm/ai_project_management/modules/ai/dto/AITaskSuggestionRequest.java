@@ -1,0 +1,23 @@
+package com.aipm.ai_project_management.modules.ai.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+import java.util.Map;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class AITaskSuggestionRequest {
+    private Long projectId;
+    private String projectDescription;
+    private String projectType;
+    private List<String> existingTasks;
+    private List<String> completedTasks;
+    private String teamSkills;
+    private Map<String, Object> projectContext;
+}

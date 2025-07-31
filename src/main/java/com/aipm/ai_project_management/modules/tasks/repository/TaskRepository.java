@@ -33,4 +33,10 @@ public interface TaskRepository extends JpaRepository<Task, Long>, JpaSpecificat
     Page<Task> searchByProjectId(@Param("projectId") Long projectId, 
                                 @Param("searchTerm") String searchTerm,
                                 Pageable pageable);
+    
+    // Count by status
+    long countByStatus(TaskStatus status);
+    
+    // Find by assignee without pagination
+    List<Task> findByAssigneeId(Long assigneeId);
 }
